@@ -112,11 +112,15 @@ export class UniUI {
             const items = this.dualLink.get(fieldName) || [];
 
             return items.map((item, index) => {
+                if (item === null) {
+                    return;
+                }
+
                 return <div className="ui message" key={index}>
                     {!_.isNumber(computedField.minCount) || items.filter(x => x).length > computedField.minCount ?
                         <i className="close icon" onClick={() => {
                             const temporary = this.dualLink.get(fieldName);
-                            delete temporary[index];
+                            temporary[index] = null;
 
                             this.dualLink.setLocal(fieldName, temporary);
                         }}></i>
@@ -135,7 +139,7 @@ export class UniUI {
                 }}>
                     <i className="plus icon"></i>
                 </div>
-            ]);
+            ]).filter(x => x);
         }
 
         return computedComponent[mode]({...this.getParams({
