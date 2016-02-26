@@ -1,4 +1,4 @@
-import {Form} from '../components/Form';
+import {Form} from '../components/Form.jsx';
 
 export class UniUI {
     static inheritComponent (name, inherit, definition) {

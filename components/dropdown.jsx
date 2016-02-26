@@ -1,4 +1,4 @@
-import {UniUI} from '../lib/UniUI';
+import {UniUI} from '../lib/UniUI.jsx';
 
 export const Dropdown = React.createClass({
     componentDidMount () {

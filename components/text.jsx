@@ -1,4 +1,4 @@
-import {UniUI} from '../lib/UniUI';
+import {UniUI} from '../lib/UniUI.jsx';
 
 UniUI.registerComponent('text', {
     edit ({name, label, className = '', placeholder, valueLink}) {
