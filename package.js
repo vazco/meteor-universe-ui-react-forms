@@ -13,7 +13,6 @@ Package.onUse(function (api) {
         'universe:ui-react@0.1.0',
         'modules@0.5.0-modules.8',
         'ecmascript@0.4.0-modules.8',
-        'react-runtime@0.14.4',
         'underscore',
         'check'
     ]);

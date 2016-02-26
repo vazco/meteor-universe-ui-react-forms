@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const Form = React.createClass({
     componentDidMount () {
         const done = this.done;

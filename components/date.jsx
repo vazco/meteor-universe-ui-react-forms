@@ -1,4 +1,5 @@
 import {UniUI} from '../lib/UniUI.jsx';
+import React from 'react';
 
 export const DatePicker = React.createClass({
     getDefaultProps () {
