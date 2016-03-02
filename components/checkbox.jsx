@@ -5,7 +5,7 @@ export const Checkbox = React.createClass({
     displayName: 'Checkbox',
 
     componentDidMount () {
-        $('.checkbox', ReactDOM.findDOMNode(this))
+        $('.checkbox', React.findDOMNode(this))
             .checkbox(this.props.value ? 'check' : 'uncheck')
             .checkbox({
                 onChecked:   () => this.props.valueLink.requestChange(true),
@@ -14,7 +14,7 @@ export const Checkbox = React.createClass({
     },
 
     componentDidUpdate () {
-        $('.checkbox', ReactDOM.findDOMNode(this))
+        $('.checkbox', React.findDOMNode(this))
             .checkbox(this.props.value ? 'check' : 'uncheck');
     },
 

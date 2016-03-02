@@ -1,3 +1,4 @@
+import React from 'react';
 import {UniUI} from '../lib/UniUI.jsx';
 
 UniUI.registerComponent('text', {
