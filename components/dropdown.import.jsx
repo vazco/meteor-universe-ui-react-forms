@@ -5,6 +5,7 @@ export const Dropdown = React.createClass({
         $('.ui.dropdown', ReactDOM.findDOMNode(this)).dropdown({
             match: 'text',
             fullTextSearch: true,
+            allowAdditions: !!this.props.allowAdditions,
 
             onChange: (value) => this.props.valueLink.requestChange(value)
         });
