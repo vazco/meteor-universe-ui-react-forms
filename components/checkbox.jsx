@@ -1,11 +1,12 @@
 import UniUI from '../lib/UniUI.jsx';
 import React from 'react';
+import {findDOMNode} from 'react-dom';
 
 export const Checkbox = React.createClass({
     displayName: 'Checkbox',
 
     componentDidMount () {
-        $('.checkbox', React.findDOMNode(this))
+        $('.checkbox', findDOMNode(this))
             .checkbox(this.props.value ? 'check' : 'uncheck')
             .checkbox({
                 onChecked:   () => this.props.valueLink.requestChange(true),
@@ -14,7 +15,7 @@ export const Checkbox = React.createClass({
     },
 
     componentDidUpdate () {
-        $('.checkbox', React.findDOMNode(this))
+        $('.checkbox', findDOMNode(this))
             .checkbox(this.props.value ? 'check' : 'uncheck');
     },
 

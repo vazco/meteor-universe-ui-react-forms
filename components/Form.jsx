@@ -1,4 +1,5 @@
 import React from 'react';
+import {findDOMNode} from 'react-dom';
 
 export const Form = React.createClass({
     componentDidMount () {
@@ -9,7 +10,7 @@ export const Form = React.createClass({
             };
         };
 
-        $(ReactDOM.findDOMNode(this)).form({
+        $(findDOMNode(this)).form({
             inline: true,
 
             onFailure: wrapListener((...args) => UniUtils.get(this, 'props.onFailure', () => {})(...args)),
@@ -31,7 +32,7 @@ export const Form = React.createClass({
         errors = errors ? [].concat(errors) : [];
 
         const still = _.pluck(errors, 'field');
-        const $form = $(ReactDOM.findDOMNode(this));
+        const $form = $(findDOMNode(this));
 
         if (errors.length) {
             $form.form('set error')

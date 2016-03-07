@@ -174,6 +174,7 @@ export class UniUI {
     }
 
     getParams ({fieldName, computedField, computedSchema, mode}) {
+        let renderField = this.renderField.bind(this);
         let params = {
             name: fieldName,
             field: computedField,
@@ -191,8 +192,8 @@ export class UniUI {
 
             className: computedField.uniUI && computedField.uniUI[mode] && computedField.uniUI[mode].className,
 
-            renderField: (name, submode = mode, {schemaExtension} = {}) => {
-                return this.renderField(fieldName + '.' + name, submode, {schema: computedSchema, schemaExtension});
+            renderField (name, submode = mode, {schemaExtension} = {}) {
+                return renderField(fieldName + '.' + name, submode, {schema: computedSchema, schemaExtension});
             }
         };
 
