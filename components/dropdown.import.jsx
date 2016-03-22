@@ -10,6 +10,8 @@ export const Dropdown = React.createClass({
             onChange: (value) => this.props.valueLink.requestChange(value)
         });
 
+        $('.ui.dropdown .search', ReactDOM.findDOMNode(this)).on('input.onSearch', this.onSearch);
+
         this.update();
     },
 
@@ -21,6 +23,10 @@ export const Dropdown = React.createClass({
             // this.update();
             Meteor.setTimeout(() => this.update());
         }
+    },
+
+    componentWillUnmount () {
+        $('.ui.dropdown .search', ReactDOM.findDOMNode(this)).off('input.onSearch');
     },
 
     render () {
@@ -35,22 +41,24 @@ export const Dropdown = React.createClass({
 
         return (
             <div className="field">
-                {label ?
+                {label && (
                     <label>{label}</label>
-                : undefined}
+                )}
 
                 <select name={name} multiple={className.indexOf('multiple') !== -1}
-                        className={'ui search selection ' + className + ' dropdown'}
+                        className={`ui search selection ${className ? ` ${className}` : ''} dropdown`}
                 >
-                    {placeholder ?
-                        <option value="">{placeholder}</option>
-                    : undefined}
+                    {placeholder && (
+                        <option value="">
+                            {placeholder}
+                        </option>
+                    )}
 
-                    {options.map((option) => {
-                        return <option value={option} key={option}>
+                    {options.map((option) =>
+                        <option value={option} key={option}>
                             {transformOption(option)}
-                        </option>;
-                    })}
+                        </option>
+                    )}
                 </select>
             </div>
         );
@@ -65,6 +73,12 @@ export const Dropdown = React.createClass({
         const $dropdown = $('.ui.dropdown', ReactDOM.findDOMNode(this)).dropdown('clear');
         [].concat(this.props.value).map(value => $dropdown.dropdown('set selected', value));
         this.props.valueLink.requestChange = requestChange;
+    },
+
+    onSearch (event) {
+        if (this.props.onSearch) {
+            this.props.onSearch($(event.currentTarget).val());
+        }
     }
 });
 

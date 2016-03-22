@@ -1,7 +1,7 @@
 Package.describe({
     name: 'universe:ui-react-forms',
     summary: 'Forms components for UniCMS.',
-    version: '0.1.2',
+    version: '0.1.3',
     readme: 'README.md'
 });
 
