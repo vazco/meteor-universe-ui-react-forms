@@ -1,7 +1,7 @@
 Package.describe({
     name: 'universe:ui-react-forms',
     summary: 'Forms components for UniCMS.',
-    version: '0.1.3',
+    version: '0.1.4',
     readme: 'README.md'
 });
 
@@ -12,7 +12,7 @@ Package.onUse(function (api) {
         'aldeed:simple-schema@1.5.3',
         'universe:ui-react@0.1.0',
         'universe:modules@0.6.8',
-        'react-runtime@0.14.4',
+        'react-runtime@0.14.3',
         'underscore',
         'check'
     ]);
