@@ -1,12 +1,12 @@
 Package.describe({
     name: 'universe:ui-react-forms',
     summary: 'Forms components for UniCMS.',
-    version: '0.1.1',
+    version: '0.2.0',
     readme: 'README.md'
 });
 
 Package.onUse(function (api) {
-    api.versionsFrom('1.2.0.2');
+    api.versionsFrom('1.3.2.3');
 
     api.use([
         'aldeed:simple-schema@1.5.3',
@@ -18,22 +18,5 @@ Package.onUse(function (api) {
         'check'
     ]);
 
-    api.addFiles([
-        'index.js',
-
-        'lib/UniUI.jsx',
-        'lib/UniUISchema.js',
-
-        'components/Form.jsx',
-
-        'components/checkbox.jsx',
-        'components/composite.email.jsx',
-        'components/composite.jsx',
-        'components/date.jsx',
-        'components/dropdown.jsx',
-        'components/none.jsx',
-        'components/number.jsx',
-        'components/text.jsx',
-        'components/text.password.jsx'
-    ]);
+    api.mainModule('index.js');
 });

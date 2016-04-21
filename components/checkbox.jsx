@@ -1,5 +1,5 @@
-import UniUI from '../lib/UniUI.jsx';
 import React from 'react';
+import UniUI from '../lib/UniUI.jsx';
 import {findDOMNode} from 'react-dom';
 
 export const Checkbox = React.createClass({

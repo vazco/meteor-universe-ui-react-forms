@@ -1,12 +1,23 @@
-export * from './lib/UniUI.jsx';
-export * from './lib/UniUISchema';
-export * from './components/Form.jsx';
-export * from './components/checkbox.jsx';
-export * from './components/composite.jsx';
-export * from './components/composite.email.jsx';
-export * from './components/date.jsx';
-export * from './components/dropdown.jsx';
-export * from './components/none.jsx';
-export * from './components/number.jsx';
-export * from './components/text.jsx';
-export * from './components/text.password.jsx';
+import UniUI from './lib/UniUI.jsx';
+import {UniUISchema} from './lib/UniUISchema';
+import {Form} from './components/Form.jsx';
+import {Checkbox} from './components/checkbox.jsx';
+import {Composite} from './components/composite.jsx';
+import {CompositeEmail} from './components/composite.email.jsx';
+import {DatePicker} from './components/date.jsx';
+import {Dropdown} from './components/dropdown.jsx';
+import './components/none.jsx';
+import './components/number.jsx';
+import './components/text.jsx';
+import './components/text.password.jsx';
+
+export {
+    UniUI,
+    UniUISchema,
+    Form,
+    Checkbox,
+    Composite,
+    CompositeEmail,
+    DatePicker,
+    Dropdown
+};

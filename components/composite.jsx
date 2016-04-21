@@ -1,6 +1,6 @@
 import {UniUI} from '../lib/UniUI.jsx';
 
-UniUI.registerComponent('composite', {
+export const Composite = UniUI.registerComponent('composite', {
     edit ({renderField, subFields}) {
         return (
             <div>
@@ -41,3 +41,5 @@ UniUI.registerComponent('composite', {
         );
     }
 });
+
+export default Composite;

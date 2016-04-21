@@ -1,7 +1,7 @@
 import React from 'react';
 import {UniUI} from '../lib/UniUI.jsx';
 
-UniUI.inheritComponent('composite.email', 'composite', {
+export const CompositeEmail = UniUI.inheritComponent('composite.email', 'composite', {
     edit ({renderField}) {
         return (
             <div className="two fields">
