@@ -1,4 +1,5 @@
-import {Form} from '../components/Form';
+import Form from '../components/Form';
+import React from 'react';
 
 export class UniUI {
     static inheritComponent (name, inherit, definition) {

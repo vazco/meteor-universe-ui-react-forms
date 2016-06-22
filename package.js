@@ -11,28 +11,13 @@ Package.onUse(function (api) {
     api.use([
         'aldeed:simple-schema@1.5.3',
         'universe:ui-react@0.1.0',
-        'universe:modules@0.6.8',
-        'react-runtime@0.14.3',
         'underscore',
-        'check'
+        'check',
+        'ecmascript'
     ]);
 
     api.addFiles([
-        'index.import.js',
-
-        'lib/UniUI.import.jsx',
-        'lib/UniUISchema.import.js',
-
-        'components/Form.import.jsx',
-
-        'components/checkbox.import.jsx',
-        'components/composite.email.import.jsx',
-        'components/composite.import.jsx',
-        'components/date.import.jsx',
-        'components/dropdown.import.jsx',
-        'components/none.import.jsx',
-        'components/number.import.jsx',
-        'components/text.import.jsx',
-        'components/text.password.import.jsx'
+        'index.js'
     ]);
+    api.mainModule('index.js');
 });

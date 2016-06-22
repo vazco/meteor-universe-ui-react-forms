@@ -30,8 +30,8 @@ Collection.setSchema({
 ```
 
 ```js
-import {UniUI} from '{universe:ui-react-forms}';
-import {DualLinkMixin} from '{universe:utilities-react}';
+import {UniUI} from 'meteor/universe:admin:ui-react-forms';
+import {DualLinkMixin} from 'meteor/universe:utilities-react';
 
 import Collection from 'Collection';
 
