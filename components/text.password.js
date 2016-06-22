@@ -1,6 +1,6 @@
+import {UniUI} from '../lib/UniUI';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {UniUI} from '../lib/UniUI';
 
 UniUI.inheritComponent('text.password', 'text', {
     edit ({name, label, className = '', placeholder, valueLink}) {
