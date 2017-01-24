@@ -1,3 +1,4 @@
+import React from 'react';
 import {UniUI} from '../lib/UniUI.jsx';
 
 export const Composite = UniUI.registerComponent('composite', {

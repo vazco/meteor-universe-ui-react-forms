@@ -1,9 +1,11 @@
 import {UniUI} from '../lib/UniUI.jsx';
 import React from 'react';
+import {findDOMNode} from 'react-dom';
 
 export const Dropdown = React.createClass({
     componentDidMount () {
-        $('.ui.dropdown', ReactDOM.findDOMNode(this)).dropdown({
+        // console.log('xxxxxxxxxxx ->',$('.ui.dropdown', findDOMNode(this)));
+        $('.ui.dropdown', findDOMNode(this)).dropdown({
             match: 'text',
             fullTextSearch: true,
 
@@ -62,7 +64,8 @@ export const Dropdown = React.createClass({
         // To stop circular calls.
 
         this.props.valueLink.requestChange = () => {};
-        const $dropdown = $('.ui.dropdown', ReactDOM.findDOMNode(this)).dropdown('clear');
+        console.log($('.ui.dropdown', findDOMNode(this)));
+        const $dropdown = $('.ui.dropdown', findDOMNode(this)).dropdown('clear');
         [].concat(this.props.value).map(value => $dropdown.dropdown('set selected', value));
         this.props.valueLink.requestChange = requestChange;
     }

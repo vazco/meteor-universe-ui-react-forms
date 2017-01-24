@@ -3,6 +3,7 @@ import {UniUI} from '../lib/UniUI.jsx';
 
 export const CompositeEmail = UniUI.inheritComponent('composite.email', 'composite', {
     edit ({renderField}) {
+        console.log('arguments in composite.email edit ---------> ', arguments);
         return (
             <div className="two fields">
                 <div className="twelve wide field">

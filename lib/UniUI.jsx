@@ -81,11 +81,17 @@ export class UniUI {
 
         const computedSchema = new SimpleSchema([this.schema, schema]);
 
+        // console.log('!!!!!!!!!!!!!!! computedSchema', computedSchema);
+
         return <Form onSuccess={UniUI.createValidator(computedSchema, this.onSuccess, {}, this.dualLink)}>
             {_.map(computedSchema.schema(), (field, fieldName) => {
-                if (fieldName.indexOf('$') !== -1) {
+                // console.log('logging fieldName BEFORE -----------> ', fieldName, ' <---------');
+
+                if (fieldName.indexOf('$') !== -1 || fieldName.indexOf('.') !== -1) {
                     return;
                 }
+
+                // console.log('logging fieldName -----------> ', field, " xxxxx ", fieldName, ' <---------');
 
                 return <div className="field" key={fieldName}>
                     {this.renderField(fieldName, mode, {computedSchema, schemaExtension})
@@ -150,6 +156,7 @@ export class UniUI {
     }
 
     getComponent ({type, uniUI: {component} = {}}) {
+        // console.log('getComponent logging type -------->', type);
         if (component) {
             if (_.isString(component)) return UniUI._components[component];
             if (_.isArray(component)) return [UniUI._components[component[0]]];
@@ -180,10 +187,13 @@ export class UniUI {
             field: computedField,
 
             subFields: _.keys(computedSchema.schema()).filter(field => {
+                // console.log('QQQ ---> ', field, ' qqq ', fieldName, ' <---QQQ');
                 return field.indexOf(fieldName.replace(/\.\d+/g, '.$')) === 0;
             }).map(field => {
+                // console.log('almost final -------> ', field);
                 return field.substr(fieldName.replace(/\.\d+/g, '.$').length + 1);
             }).filter(field => {
+                // console.log('final ----------->', field);
                 return field !== '';
             }),
 
@@ -196,6 +206,8 @@ export class UniUI {
                 return renderField(fieldName + '.' + name, submode, {schema: computedSchema, schemaExtension});
             }
         };
+
+        // console.log('logging PARAMS RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR ->', params);
 
         if (computedField.uniUI && computedField.uniUI[mode]) {
             if (computedField.uniUI[mode].label === undefined || computedField.uniUI[mode].label === true) {
