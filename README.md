@@ -1,6 +1,14 @@
-## Abandonware
+<h1 align="center">
+    <a href="https://github.com/vazco">vazco</a>/Universe UI React Forms
+</h1>
 
-# universe:ui-react-forms
+&nbsp;
+
+<h3 align="center">
+  -- Abandonware. This package is deprecated! --
+</h3>
+
+&nbsp;
 
 ### Basic usage
 ```js
@@ -57,3 +65,9 @@ export const CollectionForm = React.createClass({
     }
 });
 ```
+
+### License
+
+<img src="https://vazco.eu/banner.png" align="right">
+
+**Like every package maintained by [Vazco](https://vazco.eu/), Universe UI React Forms is [MIT licensed](https://github.com/vazco/uniforms/blob/master/LICENSE).**
